@@ -1,13 +1,14 @@
 import Telegraf from 'telegraf';
 import {DockerWatcher} from "./DockerWatcher";
 
-const bot = new Telegraf(process.env.BOT_TOKEN as string);
-const globalPw = process.env.GLOBAL_PW;
-
-const logInMessage = 'Please log in';
-const welcomeMessage = 'Welcome to the Docker Monitor Bot! You will receive notifications if a container stops in your deployment!';
 
 async function main() {
+  const bot = new Telegraf(process.env.BOT_TOKEN as string);
+  const globalPw = process.env.GLOBAL_PW;
+
+  const logInMessage = 'Please log in';
+  const welcomeMessage = 'Welcome to the Docker Monitor Bot! You will receive notifications if a container stops in your deployment!';
+
   const loggedIn: number[] = [];
 
   console.log('Starting bot!');
