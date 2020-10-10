@@ -36,10 +36,10 @@ export class DockerWatcher {
         }
         if (!isContained) {
           for (const user of users) {
-            await this.bot.telegram.sendMessage(user, `Container ${container.Names}`);
+            await this.bot.telegram.sendMessage(user, `Container "${container.Names}" has stopped!`);
           }
           const index = this.containers.indexOf(container)
-          this.containers = this.containers.splice(index, 1);
+          this.containers.splice(index, 1);
         }
       }
 
